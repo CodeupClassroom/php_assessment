@@ -94,8 +94,12 @@ function.
 
 ## Tests
 
-From your vagrant box, run
+From your vagrant box, go into the `php-assesment` directory, and run
 
 ```
 phpunit PHPAssesmentTests
 ```
+
+This will run a series of tests on your code. Read all the messages in the
+output carefully, they will tell you specifically what your function is expected
+to output.
