@@ -4,7 +4,7 @@ Instructions:
 
 1. Clone this repositoy to your `~/vagrant-lamp` directory
 
-        git clone git@github.com:codeupclassroom/quincy-php-assesment.git ~/vagrant-lamp/php-assesment
+        git clone git@github.com:CodeupClassroom/quincy-php-assesment.git ~/vagrant-lamp/php-assesment
 
 1. Create a branch named `first-last` where `first` is your first name and `last` is your lastname
 
