@@ -1,5 +1,9 @@
 <?php
 
+define('ASSESMENT_FILE', __DIR__ . '/assesment.php');
+
+require ASSESMENT_FILE;
+
 class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 {
     public function test_is_negative()
