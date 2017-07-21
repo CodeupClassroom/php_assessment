@@ -91,3 +91,11 @@ function.
             ['firstName' => 'Hermione', 'lastName' => 'Granger],
         ]
          */
+
+## Tests
+
+From your vagrant box, run
+
+```
+phpunit PHPAssesmentTests
+```
