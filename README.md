@@ -1,14 +1,31 @@
-# PHP Assesment
+# PHP Assessment
 
-Instructions:
+### Competencies and skills assessed:
 
-1. Clone this repositoy to your `~/vagrant-lamp` directory
+- Reading and following directions
+- Producing solutions that match the problem specification
+- Using Git and working with GitHub
+    - Cloning a git repository from GitHub
+    - Creating your own branch
+    - Committing and pushing work to a new branch on GitHub
 
-        git clone git@github.com:CodeupClassroom/quincy-php-assesment.git ~/vagrant-lamp/php-assesment
+- Programing fundamentals in PHP
+    - Working with data types and variables
+    - Using assignment and comparisson operators
+    - String and array manipulation
+    - Writing reusable functions
 
-1. Create a branch named `first-last` where `first` is your first name and `last` is your lastname
+### Instructions:
 
-1. Write your solutions to the problems presented below inside `assesment.php`.
+1. Clone this repository to your `~/vagrant-lamp` directory.
+        
+        git clone git@github.com:gocodeup/php-assessment.git ~/vagrant-lamp/php-assessment
+
+1. Create a branch named `first-last` where `first` is your first name and `last` is your lastname.
+
+1. Write your solutions to the problems presented below inside `assessment.php`.
+
+1. Follow the "Testing" instructions provided below to run automated tests on your solution
 
 1. Add, commit, and push to your branch
 
@@ -27,10 +44,10 @@ You will be graded on:
 
 - Did you follow the instructions precisely?
 
-    - Did you create a gist?
-    - Did you send instructors@codeup a link to the gist with prescribed subject line?
+    - Did you create an appropriately named branch?
+    - Did you push your solutions to GitHub?
 
-    If you did not do either of the above, your assesment cannot be graded and
+    If you did not do either of the above, your assessment cannot be graded and
     you will receive a 0.
 
     You will lose points one point per problem if the function is not named
@@ -92,12 +109,12 @@ function.
         ]
          */
 
-## Tests
+## Testing your code with automated tests:
 
-From your vagrant box, go into the `php-assesment` directory, and run
+From your vagrant box, go into the `php-assessment` directory, and run
 
 ```
-phpunit PHPAssesmentTests
+phpunit PHPAssessmentTests
 ```
 
 This will run a series of tests on your code. Read all the messages in the
