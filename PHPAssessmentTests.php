@@ -1,8 +1,8 @@
 <?php
 
-define('ASSESMENT_FILE', __DIR__ . '/assesment.php');
+define('ASSESSMENT_FILE', __DIR__ . '/assessment.php');
 
-require ASSESMENT_FILE;
+require ASSESSMENT_FILE;
 
 class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 {
