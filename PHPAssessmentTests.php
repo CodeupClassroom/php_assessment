@@ -154,7 +154,7 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
     {
         $this->assertInternalType(
             'callable',
-            'fiveTo'
+            'fiveTo',
             "Expected fiveTo() function to exist."
         );
 
@@ -255,7 +255,7 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 
         $this->assertInternalType(
             'array',
-            upperCaseLastNames($gangsterInput)),
+            upperCaseLastNames($gangsterInput),
             "Expected upperCaseLastNames([
                 [
                     'firstName' => 'Al',
