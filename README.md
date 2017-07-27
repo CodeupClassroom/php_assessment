@@ -1,6 +1,6 @@
 # PHP Assessment
 
-### Competencies and skills assessed:
+### Core competencies and skills assessed:
 
 - Reading and following directions
 - Producing solutions that match the problem specification
@@ -25,7 +25,7 @@
 
 1. Write your solutions to the problems presented below inside `assessment.php`.
 
-1. Follow the "Testing" instructions provided below to run automated tests on your solution
+1. Follow the "Testing" instructions provided below to run automated tests on your solution.
 
 1. Add, commit, and push to your branch
 
