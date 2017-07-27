@@ -105,7 +105,7 @@ function.
         [
             ['firstName' => 'Harry', 'lastName' => 'Potter'],
             ['firstName' => 'Ron', 'lastName' => 'Weasley'],
-            ['firstName' => 'Hermione', 'lastName' => 'Granger],
+            ['firstName' => 'Hermione', 'lastName' => 'Granger'],
         ]
          */
 
