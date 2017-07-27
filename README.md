@@ -98,7 +98,7 @@ function.
         $names = [
             ['firstName' => 'Harry', 'lastName' => 'Potter'],
             ['firstName' => 'Ron', 'lastName' => 'weasley'],
-            ['firstName' => 'Hermione', 'lastName' => 'granger],
+            ['firstName' => 'Hermione', 'lastName' => 'granger'],
         ];
         upperCaseLastNames(names);
         /*

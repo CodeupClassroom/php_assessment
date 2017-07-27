@@ -160,66 +160,6 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 
     public function test_upper_case_last_names()
     {
-        $gangsterInput = [
-            [
-                'firstName' => 'Al',
-                'lastName' => 'capone'
-            ],
-            [
-                'firstName' => 'Bugsy',
-                'lastName' => 'seigel'
-            ],
-            [
-                'firstName' => 'John',
-                'lastName' => 'dillinger'
-            ]
-        ];
-
-        $gangsterOutput = [
-            [
-                'firstName' => 'Al',
-                'lastName' => 'Capone'
-            ],
-            [
-                'firstName' => 'Bugsy',
-                'lastName' => 'Seigel'
-            ],
-            [
-                'firstName' => 'John',
-                'lastName' => 'Dillinger'
-            ]
-        ];
-
-        $harryPotterInput = [
-            [
-                'firstName' => 'Harry',
-                'lastName' => 'potter'
-            ],
-            [
-                'firstName' => 'Ron',
-                'lastName' => 'weasley'
-            ],
-            [
-                'firstName' => 'Hermione',
-                'lastName' => 'granger'
-            ]
-        ];
-
-        $harryPotterOutput = [
-            [
-                'firstName' => 'Harry',
-                'lastName' => 'Potter'
-            ],
-            [
-                'firstName' => 'Ron',
-                'lastName' => 'Weasley'
-            ],
-            [
-                'firstName' => 'Hermione',
-                'lastName' => 'granger'
-            ]
-        ];
-
         $this->assertTrue(
             function_exists('upperCaseLastNames'),
             "Expected upperCaseLastNames() function to exist"
@@ -259,7 +199,7 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
                     'firstName' => 'John',
                     'lastName' => 'dillinger'
                 ]
-            ]) to be an array"
+            ]) to be an array."
         );
 
         $this->assertArrayHasKey('firstName',
@@ -290,8 +230,39 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
                     'firstName' => 'John',
                     'lastName' => 'dillinger'
                 ]
-                ]) to be an associative array and to have a key of firstName"
-            );
+            ]) to be an associative array and to have a key of 'firstName'"
+        );
+
+        $this->assertArrayHasKey('lastName',
+            upperCaseLastNames([
+                [
+                    'firstName' => 'Al',
+                    'lastName' => 'capone'
+                ],
+                [
+                    'firstName' => 'Bugsy',
+                    'lastName' => 'seigel'
+                ],
+                [
+                    'firstName' => 'John',
+                    'lastName' => 'dillinger'
+                ]
+                ])[0],
+            "Expected the first element of the array returned by upperCaseLastNames([
+                [
+                    'firstName' => 'Al',
+                    'lastName' => 'capone'
+                ],
+                [
+                    'firstName' => 'Bugsy',
+                    'lastName' => 'seigel'
+                ],
+                [
+                    'firstName' => 'John',
+                    'lastName' => 'dillinger'
+                ]
+            ]) to be an associative array and to have a key of 'lastName'"
+        );
 
         $this->assertEquals(
             [
@@ -322,7 +293,33 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
                     'lastName' => 'granger'
                 ]
             ]),
-            "Expected ['firstName' => 'Harry', 'lastName' => 'potter] to equal ['firstName' => 'Harry', 'lastName' => 'Potter']"
+            "Expected [
+                [
+                    'firstName' => 'Harry',
+                    'lastName' => 'Potter'
+                ],
+                [
+                    'firstName' => 'Ron',
+                    'lastName' => 'Weasley'
+                ],
+                [
+                    'firstName' => 'Hermione',
+                    'lastName' => 'Granger'
+                ]
+            ] to equal upperCaseLastNames([
+                [
+                    'firstName' => 'Harry',
+                    'lastName' => 'potter'
+                ],
+                [
+                    'firstName' => 'Ron',
+                    'lastName' => 'weasley'
+                ],
+                [
+                    'firstName' => 'Hermione',
+                    'lastName' => 'granger'
+                ]
+            ])"
         );
 
         $this->assertEquals(
