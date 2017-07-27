@@ -8,23 +8,41 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 {
     public function test_is_negative()
     {
+        $negativeNumber = mt_rand(-200, -50);
+        $positiveNumber = mt_rand(20, 400);
+
+
+        $this->assertInternalType(
+            'callable',
+            'isNegative',
+            'Expected isNegative() function to be present.'
+        );
+
+        $this->assertInternalType(
+            'bool',
+            isNegative(12),
+            "Expected the isNegative(12) function to return a boolean"
+        );
+
+        $this->assertInternalType(
+            'bool', 
+            isNegative(-12),
+            "Expected the isNegative(-12) function to return a boolean"
+        );
+
+        
         $this->assertTrue(
-            function_exists('isNegative'), 
-            "Expected isNegative() function to be present."
+            isNegative($negativeNumber),
+             "Expected isNegative($negativeNumber) to return true."
+        );
+        
+        $this->assertFalse(
+            isNegative($positiveNumber),
+            "Expected isNegative($positiveNumber) to return false."
         );
 
         $this->assertTrue(
-            is_bool(isNegative(12)), 
-            "Expected the isNegative function to return a boolean"
-        );
-
-        $this->assertTrue(
-            is_bool(isNegative(-12)), 
-            "Expected the isNegative function to return a boolean"
-        );
-
-        $this->assertTrue(
-            isNegative(-100), 
+            isNegative(-10), 
             "Expected isNegative(-10) to return true"
         );
 
@@ -41,14 +59,16 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 
     public function test_average()
     {
-        $this->assertTrue(
-            function_exists('average'), 
-            "Expected average() function to be present"
+        $this->assertInternalType(
+            'callable', 
+            'average',
+            "Expected average() function to be present."
         );
 
-        $this->assertTrue(
-            is_numeric(average([1, 2, 3])), 
-            "Expected average() to return a numberic result"
+        $this->assertInternalType(
+            'numeric',
+            average([1, 2, 3]),
+            "Expected average() to return a numeric result"
         );
 
         $this->assertEquals(
@@ -64,14 +84,17 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 
     public function test_count_odds()
     {
-        $this->assertTrue(
-            function_exists('countOdds'), 
-            "Expected countOdds() function to be present."
+
+        $this->assertInternalType(
+            'callable',
+            'countOdds',
+            'Expected countOdds() function to be present.'
         );
 
-        $this->assertTrue(
-            is_numeric(countOdds([1, 2, 3])), 
-            "Expected countOdds() function to return a number."
+        $this->assertInternalType(
+            'numeric',
+            countOdds([1, 2, 3]),
+            "Expected countOdds([1, 2, 3]) to return a numeric result."
         );
 
         $this->assertEquals(
@@ -92,14 +115,16 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 
     public function test_convert_name_to_associative_array()
     {
-        $this->assertTrue(
-            function_exists('convertNameToAssociativeArray'), 
+        $this->assertInternalType(
+            'callable',
+            'convertNameToAssociativeArray',
             "Expected convertNameToAssociativeArray() function to be present."
         );
 
-        $this->assertTrue(
-            is_array(convertNameToAssociativeArray("John Dillinger")), 
-            "Expected convertNameToAssociativeArray() to return an array"
+        $this->assertInternalType(
+            'array',
+            convertNameToAssociativeArray("John Dillinger"),
+            "Expected convertNameToAssociativeArray('John Dillinger') to return an array"
         );
 
         $this->assertArrayHasKey('firstName',
@@ -127,13 +152,15 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 
     public function test_five_to()
     {
-        $this->assertTrue(
-            function_exists('fiveTo'),
+        $this->assertInternalType(
+            'callable',
+            'fiveTo'
             "Expected fiveTo() function to exist."
         );
 
-        $this->assertTrue(
-            is_array(fiveTo(10)),
+        $this->assertInternalType(
+            'array',
+            fiveTo(10),
             "Expected fiveTo() function to return an array."
         );
 
@@ -160,13 +187,75 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
 
     public function test_upper_case_last_names()
     {
-        $this->assertTrue(
-            function_exists('upperCaseLastNames'),
+        $gangsterInput = [
+            [
+                'firstName' => 'Al',
+                'lastName' => 'capone'
+            ],
+            [
+                'firstName' => 'Bugsy',
+                'lastName' => 'seigel'
+            ],
+            [
+                'firstName' => 'John',
+                'lastName' => 'dillinger'
+            ]
+        ];
+
+        $gangsterOutput = [
+            [
+                'firstName' => 'Al',
+                'lastName' => 'Capone'
+            ],
+            [
+                'firstName' => 'Bugsy',
+                'lastName' => 'Seigel'
+            ],
+            [
+                'firstName' => 'John',
+                'lastName' => 'Dillinger'
+            ]
+        ];
+        
+        $harryPotterInput = [
+            [
+                'firstName' => 'Harry',
+                'lastName' => 'potter'
+            ],
+            [
+                'firstName' => 'Ron',
+                'lastName' => 'weasley'
+            ],
+            [
+                'firstName' => 'Hermione',
+                'lastName' => 'granger'
+            ]
+        ];
+
+        $harryPotterOutput = [
+            [
+                'firstName' => 'Harry',
+                'lastName' => 'Potter'
+            ],
+            [
+                'firstName' => 'Ron',
+                'lastName' => 'Weasley'
+            ],
+            [
+                'firstName' => 'Hermione',
+                'lastName' => 'Granger'
+            ]
+        ];
+
+        $this->assertInternalType(
+            'callable',
+            'upperCaseLastNames',
             "Expected upperCaseLastNames() function to exist"
         );
 
-        $this->assertTrue(
-            is_array(upperCaseLastNames($gangsterInput)),
+        $this->assertInternalType(
+            'array',
+            upperCaseLastNames($gangsterInput)),
             "Expected upperCaseLastNames([
                 [
                     'firstName' => 'Al',
@@ -183,8 +272,9 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
             ]) to return an array"
         );
 
-        $this->assertTrue(
-            is_array(upperCaseLastNames($gangsterInput)[0]),
+        $this->assertInternalType(
+            'array',
+            upperCaseLastNames($gangsterInput)[0],
             "Expected the first element of the array returned by 
             upperCaseLastNames([
                 [
@@ -202,21 +292,9 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
             ]) to be an array."
         );
 
-        $this->assertArrayHasKey('firstName',
-            upperCaseLastNames([
-                [
-                    'firstName' => 'Al',
-                    'lastName' => 'capone'
-                ],
-                [
-                    'firstName' => 'Bugsy',
-                    'lastName' => 'seigel'
-                ],
-                [
-                    'firstName' => 'John',
-                    'lastName' => 'dillinger'
-                ]
-                ])[0],
+        $this->assertArrayHasKey(
+            'firstName',
+            upperCaseLastNames($gangsterInput)[0],
             "Expected the first element of the array returned by upperCaseLastNames([
                 [
                     'firstName' => 'Al',
@@ -233,21 +311,9 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
             ]) to be an associative array and to have a key of 'firstName'"
         );
 
-        $this->assertArrayHasKey('lastName',
-            upperCaseLastNames([
-                [
-                    'firstName' => 'Al',
-                    'lastName' => 'capone'
-                ],
-                [
-                    'firstName' => 'Bugsy',
-                    'lastName' => 'seigel'
-                ],
-                [
-                    'firstName' => 'John',
-                    'lastName' => 'dillinger'
-                ]
-                ])[0],
+        $this->assertArrayHasKey(
+            'lastName',
+            upperCaseLastNames($gangsterInput)[0],
             "Expected the first element of the array returned by upperCaseLastNames([
                 [
                     'firstName' => 'Al',
@@ -265,34 +331,8 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
         );
 
         $this->assertEquals(
-            [
-                [
-                    'firstName' => 'Harry',
-                    'lastName' => 'Potter'
-                ],
-                [
-                    'firstName' => 'Ron',
-                    'lastName' => 'Weasley'
-                ],
-                [
-                    'firstName' => 'Hermione',
-                    'lastName' => 'Granger'
-                ]
-            ],
-            upperCaseLastNames([
-                [
-                    'firstName' => 'Harry',
-                    'lastName' => 'potter'
-                ],
-                [
-                    'firstName' => 'Ron',
-                    'lastName' => 'weasley'
-                ],
-                [
-                    'firstName' => 'Hermione',
-                    'lastName' => 'granger'
-                ]
-            ]),
+            $harryPotterOutput,
+            upperCaseLastNames($harryPotterInput),
             "Expected [
                 [
                     'firstName' => 'Harry',
@@ -323,36 +363,10 @@ class PHPAssessmentTests extends PHPUnit_Framework_TestCase
         );
 
         $this->assertEquals(
-            [
-                [
-                    'firstName' => 'Al',
-                    'lastName' => 'Capone'
-                ],
-                [
-                    'firstName' => 'Bugsy',
-                    'lastName' => 'Seigel'
-                ],
-                [
-                    'firstName' => 'John',
-                    'lastName' => 'Dillinger'
-                ]
-            ],
+            $gangsterOutput,
 
             // call 
-            upperCaseLastNames([
-                [
-                    'firstName' => 'Al',
-                    'lastName' => 'capone'
-                ],
-                [
-                    'firstName' => 'Bugsy',
-                    'lastName' => 'seigel'
-                ],
-                [
-                    'firstName' => 'John',
-                    'lastName' => 'dillinger'
-                ]
-            ]),
+            upperCaseLastNames($gangsterInput),
             
             // message
             "Expected upperCaseLastNames([
