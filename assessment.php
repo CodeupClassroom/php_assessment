@@ -3,10 +3,8 @@
 // Write your code here
 function isNegative($var){
 	if (is_numeric($var) && $var < 0){
-		echo "Its true" .PHP_EOL;
 		return true;
 	} else {
-		echo "Its false" .PHP_EOL;
 		return false;
 	}
 };
@@ -34,3 +32,49 @@ function countOdds($var){
 }
 
 echo countOdds([1,3,5,7,8]);
+
+function convertNameToAssociativeArray($var){
+	$stringArray = explode(" ",$var);
+	$newArray = ["firstName" => $stringArray[0],"lastName" => $stringArray[1]];
+	return $newArray;
+}
+
+var_dump(convertNameToAssociativeArray("emmett peters"));
+
+function fiveTo($var){
+	$array = [];
+	$i=5;
+	if ($var > 5){
+		while($i<=$var){
+			array_push($array,$i);
+			$i+=1;
+		}	
+	} else {
+		while($i>=$var){
+			array_push($array,$i);
+			$i-=1;
+		}
+	}
+	return $array;
+}
+
+var_dump(fiveTo(1));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
