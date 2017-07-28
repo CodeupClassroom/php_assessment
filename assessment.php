@@ -1,3 +1,11 @@
 <?php
 
-// Write your code here
+//Negative Checker
+
+function isNegative($num){
+	if ($num < 0){
+		return true;
+	} else {
+		return false;
+	}
+}
