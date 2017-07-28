@@ -51,18 +51,10 @@ function fiveTo($targetNum){
 	}
 }
 //Upper Last Names
-$names = [
-     ['firstName' => 'Harry', 'lastName' => 'Potter'],
-     ['firstName' => 'Ron', 'lastName' => 'weasley'],
-     ['firstName' => 'Hermione', 'lastName' => 'granger'],
- ];
-
 function upperCaseLastNames($arr){
 	for ($i = 0; $i < count($arr); $i++){
 		$arr[$i]{"lastName"} = ucfirst($arr[$i]{"lastName"});
 	}
 	return $arr;
 }
-
-print_r(upperCaseLastNames($names));
 
