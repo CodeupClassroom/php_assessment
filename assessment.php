@@ -9,7 +9,7 @@ function isNegative($var){
 	}
 };
 
-echo isNegative(-4);
+// echo isNegative(-4);
 
 function average($var){
 	$total = 0;
@@ -19,7 +19,7 @@ function average($var){
 	return $total/count($var);
 };
 
-echo average([1,2,3,4,5]);
+// echo average([1,2,3,4,5]);
 
 function countOdds($var){
 	$count = 0;
@@ -31,7 +31,7 @@ function countOdds($var){
 	return $count;
 }
 
-echo countOdds([1,3,5,7,8]);
+// echo countOdds([1,3,5,7,8]);
 
 function convertNameToAssociativeArray($var){
 	$stringArray = explode(" ",$var);
@@ -39,7 +39,7 @@ function convertNameToAssociativeArray($var){
 	return $newArray;
 }
 
-var_dump(convertNameToAssociativeArray("emmett peters"));
+// var_dump(convertNameToAssociativeArray("emmett peters"));
 
 function fiveTo($var){
 	$array = [];
@@ -58,8 +58,19 @@ function fiveTo($var){
 	return $array;
 }
 
-var_dump(fiveTo(1));
+// var_dump(fiveTo(1));
 
+function upperCaseLastNames($mainArray){
+	$newArray = [];
+	foreach($mainArray as $key => $nameArray){
+		$newNameArray = ['firstName'=>$nameArray['firstName'], 'lastName'=>ucfirst($nameArray['lastName'])];
+		array_push($newArray,$newNameArray);
+	}
+	return $newArray;
+	
+}
+
+upperCaseLastNames([["firstName" => "emmett","lastName" => "peters"],["firstName" => "cody","lastName" =>"hastings"]]);
 
 
 
