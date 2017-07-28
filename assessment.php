@@ -9,3 +9,9 @@ function isNegative($num){
 		return false;
 	}
 }
+
+function average($arr) {
+	$sum = array_sum($arr);
+	$avg = $sum/count($arr);
+	return $avg;
+}
