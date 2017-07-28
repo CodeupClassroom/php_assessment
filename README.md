@@ -17,6 +17,8 @@
 
 ### Instructions:
 
+0. *Carefully* read all the instructions and problems.
+
 1. Clone this repository to your `~/vagrant-lamp` directory.
         
         git@github.com:CodeupClassroom/php_assessment.git ~/vagrant-lamp/php-assessment
