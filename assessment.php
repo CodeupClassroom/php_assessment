@@ -26,3 +26,11 @@ function countOdds($arr){
 	}
 	return $oddCount;
 }
+
+//Convert Name to Assoc Arr
+function convertNameToAssociativeArray($name){
+	$nameArr = [];
+	$nameArr = explode(' ', $name);
+	$assocArray = ['firstName' => $nameArr[0], 'lastName' => $nameArr[1]];
+	return $assocArray;
+}
