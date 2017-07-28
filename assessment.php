@@ -1,32 +1,59 @@
 <?php
 
-// 1. Write a function named `isNegative` that accepts a number and returns `true` or `false` 
+// 1. Write a function named `isNegative` that accepts a number and returns `true` or `false`
 // based on whether the input is negative.
 
-function isNegative($a)
+
+function isNegative($input)
 {
-if($a < 0)
+if($input < 0)
 {
   return true;
-} if($a >= 0)
+} if($input >= 0)
 	return false;
 }
-
 var_dump(isNegative(6));
 
 
-
+// Both checked out ok
 //         isNegative(-1) // true
 //         isNegative(6) // false
 
 // 1. Write a function named `average` that accepts an array of numbers and returns
 //    the average of those numbers
 
+// $inputArray = array(1, 2, 3);
+$inputArray = array(4, 6, 8, 10, 12);
+function average($inputArray) {
+ return array_sum($inputArray) / count($inputArray);
+}
+var_dump(average($inputArray));
+
+
+
 //         average([1, 2, 3]) // 2
 //         average([4, 6, 8, 10, 12]) // 8
 
 // 1. Write a function named `countOdds` that accepts an array of numbers and
 //    returns the number of odd numbers in the array.
+
+
+$even = $odd = $invalid = array();
+
+foreach ($result as $num) {
+    if (is_numeric($num)) {
+        if ($num % 2 == 0) {
+            $even[] = $num;
+        } else {
+            $odd[] = $num;
+        }
+    } else {
+        $invalid[] = $num;
+    }
+
+}
+echo "Total of odd numbers: " . array_sum($odd);
+
 
 //         countOdds([1, 2, 3]) // 2
 //         countOdds([4, 6, 8, 10]) // 0
