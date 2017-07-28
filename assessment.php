@@ -34,3 +34,26 @@ function convertNameToAssociativeArray($name){
 	$assocArray = ['firstName' => $nameArr[0], 'lastName' => $nameArr[1]];
 	return $assocArray;
 }
+
+//Five To
+function fiveTo($targetNum){
+	$arr = [];
+	if ($targetNum < 5) {
+		for ($i = 5; $i >= $targetNum; $i--){
+			array_push($arr, $i);
+		}
+		return $arr;
+	} else {
+		for ($i = 5; $i <= $targetNum; $i++){
+			array_push($arr, $i);
+		}
+		return $arr;
+	}
+}
+
+
+
+
+
+
+
