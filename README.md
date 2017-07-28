@@ -19,7 +19,7 @@
 
 1. Clone this repository to your `~/vagrant-lamp` directory.
         
-        git clone git@github.com:gocodeup/php-assessment.git ~/vagrant-lamp/php-assessment
+        git@github.com:CodeupClassroom/php_assessment.git ~/vagrant-lamp/php-assessment
 
 1. Create a branch named `first-last` where `first` is your first name and `last` is your lastname.
 
